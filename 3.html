@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 10-3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="task">
+        <h1>Задача 3</h1>
+        <p>1.Ссылка, для которой отменено событие по умолчанию.</p>
+        <p>2. Форму, состоящую трех текстовых полей: «Начислено», «Удержано» и «Итого», а также добавьте кнопку
+            «Подсчитать».После ввода в первые два поля чисел и нажатия на кнопку, в третьем поле должен отобразиться
+            итог вычислений: значение поля Начислено – значение поля Удержано.</p>
+        <p>3. Ссылка «back». Выполняет функции кнопки «Назад» браузера и загружает предыдущую страницу (независимо от ее
+            URL!!!)</p>
+        <div class="link">
+            <a href="https://ya.ru/" id="prevent">Yandex</a>
+        </div>
+        <div class="form">
+            <form>
+                <label for="transferred">Начислено</label>
+                <input id="transferred" name="transferred" value="">
+                <label for="withheld">Удержано</label>
+                <input id="withheld" name="withheld" value="">
+                <label for="result">Итого</label>
+                <input id="in-total" name="in-total" value="">
+                <p><input type="button" value="Подсчитать" id="button" class="button"></p>
+            </form>
+        </div>
+        <div class="next-page">
+            <a href="#!">back</a>
+        </div>
+</body>
+<script>
+    document.querySelector("#prevent").onclick = function () {
+        alert("Ссылка, для которой отменено событие по умолчанию");
+        event.preventDefault();
+    };
+    document.querySelector("#button").onclick = function () {
+        let transferred = document.querySelector("input[name='transferred']").value;
+        let withheld = document.querySelector("input[name='withheld']").value;
+        let result = transferred - withheld;
+        document.querySelector("#in-total").value = result;
+    }
+    document.querySelector("#back").addEventListener('click', function () {
+        history.go(-1);
+        return false;
+    });
+</script>
+
+</html>
