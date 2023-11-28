@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задача 10-2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="task">
+        <h1>Задача 2</h1>
+        <p>При нажатии на кнопку «Information about screen» в текстовые поля загружается информация о разрешении экрана. 
+            <br>Ссылка «Next Page» позволяет загрузить страницу 3.html.
+            Ссылка «back» выполняет функции кнопки «Назад» браузера и загружает предыдущую страницу (независимо от ее URL!!!)            
+        </p>
+    </div>
+    <div class="form">
+        <p><input type="button" value="Information about screen" id="button" class="button"></p>
+        <p class="form__text">расширение по ширине <input type="text" id="screen-width"></p>
+        <p class="form__text">расширение по высоте <input type="text" id="screen-height"></p>
+        <p class="form__text">ширина рабочей области <input type="text" id="workspace-width"></p>
+        <p class="form__text">высота рабочей области <input type="text" id="workspace-height"></p>
+    </div>
+    <div class="next-page">
+        <p><a href="3.html">next page</a></p>
+        <p><a href="#!" id="back">back</a></p>
+    </div>
+</body>
+<script>
+        document.querySelector("#button").addEventListener('click', function () {
+            let text = document.querySelector ('#screen-width');
+            text.value = window.screen.width;
+            let info = document.querySelector ('#screen-height');
+            info.value = window.screen.height;
+            let textblock = document.querySelector ('#workspace-width');
+            textblock.value = window.screen.workspaceWidth;
+            let infoblock = document.querySelector ('#workspace-height');
+            infoblock.value = window.screen.workspaceHeight;
+        });
+        document.querySelector("#back").addEventListener ('click', function () {
+            history.go(-1);
+            return false;
+        });
+</script>
+</html>
