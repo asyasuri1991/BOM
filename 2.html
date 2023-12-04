@@ -18,12 +18,12 @@
         <p><input type="button" value="Information about screen" id="button" class="button"></p>
         <p class="form__text">расширение по ширине <input type="text" id="screen-width"></p>
         <p class="form__text">расширение по высоте <input type="text" id="screen-height"></p>
-        <p class="form__text">ширина рабочей области <input type="text" id="workspace-width"></p>
-        <p class="form__text">высота рабочей области <input type="text" id="workspace-height"></p>
+        <p class="form__text">ширина рабочей области <input type="text" id="avail-width"></p>
+        <p class="form__text">высота рабочей области <input type="text" id="avail-height"></p>
     </div>
     <div class="next-page">
         <p><a href="3.html">next page</a></p>
-        <p><a href="#!" id="back">back</a></p>
+        <p><a href="#!" onclick="history.back()">back</a></p>
     </div>
 </body>
 <script>
@@ -32,10 +32,10 @@
             text.value = window.screen.width;
             let info = document.querySelector ('#screen-height');
             info.value = window.screen.height;
-            let textblock = document.querySelector ('#workspace-width');
-            textblock.value = window.screen.workspaceWidth;
-            let infoblock = document.querySelector ('#workspace-height');
-            infoblock.value = window.screen.workspaceHeight;
+            let textblock = document.querySelector ('#avail-width');
+            textblock.value = window.screen.availWidth;
+            let infoblock = document.querySelector ('#avai;-height');
+            infoblock.value = window.screen.availHeight;
         });
         document.querySelector("#back").addEventListener ('click', function () {
             history.go(-1);
